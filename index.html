@@ -14,12 +14,10 @@
       <div id="shelf-container">
         <section class="Shelf-Search">
         <p><strong>Discover timeless classics at your fingertips.</strong><br> Use the search below to find books by title, author, or genre.<br> Whether you're in the mood for adventure, romance,<br> or thought-provoking literature,<br> explore the world of public domain books effortlessly.</p>
-        <input type="text" placeholder="Story/Author/Genre" /><br>
+        <form id="searcher">
+        <input type="text" id="search-input" placeholder="Story/Author/Genre" /><br>
         <button>Search</button><br>
-        <!-- <input type="text" placeholder="Filter by genre..." />
-        <button> Author Filter</button><br>
-        <input type="text" placeholder="Filter by author..." />
-        <button>Author Search</button> -->
+        </form>
         </section>
         <!---Book display section--->
         <section class="book-display">
@@ -38,6 +36,6 @@
           </div>
         </section>
       </div>
-
+    <script src="./src/index.js"></script>
     </body>
 </html>
