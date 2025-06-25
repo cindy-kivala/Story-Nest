@@ -23,7 +23,7 @@ function main() {
    });
 
    //API URL
-   const API_URL = "https://gutendex.com/books";
+//    const API_URL = "https://localhost:3000/books";
 
    //fetch books function- in response to user input
    function fetchBooks(searchInput) {
@@ -53,7 +53,7 @@ function main() {
 
           //get book author on basis of first match to avoid confusion and ensure clarity
           let author = "Unknown";
-          if (book.author && book.authors.length > 0) {
+          if (book.authors && book.authors.length > 0) { //The singular first author was throwing error
             author = book.authors[0].name;
           }
          console.log("author:", author);
@@ -67,10 +67,23 @@ function main() {
 
           //get book cover image
           let img = "";
-          if (book.formats && book.formats["image/jpeg"]) {
-            img = book.formats["image/jpeg"];
+          if (book.formats && book.formats["image/jpg"]) {
+              img = book.formats["image/jpg"];//why is it not working? Ah, i needed to restart the server*
+              //NB: DON'T FORGET TO RESTART THE SERVER
+          } else if (book.formats && book.formats["image/jpeg"]) {
+              img = book.formats["image/jpeg"];
           }
           console.log("img:", img);
+
+          //update bookDiv with book details
+           bookDiv.innerHTML = `
+              <h3>${title}</h3>
+              <img src="${img}" alt="Book Cover" width="100" height="150">
+              <p><strong>Author:</strong> ${author}</p>
+              <p><strong>Genre:</strong> ${subject}</p>
+           `;//Experiment with book cover image size
+              bookDisplay.appendChild(bookDiv);
        });
+       console.log("Books displayed successfully.");
    }
 }
