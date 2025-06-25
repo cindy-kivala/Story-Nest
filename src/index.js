@@ -16,6 +16,12 @@ function main() {
         // redirect to the search results page with the search term as a query parameter
         fetchBooks(searchTerm); //call API function if input is not empty 
     }
+   });
+   //listener for input changes
+   input.addEventListener("input", (event) => {
+    console.log("Typing:", event.target.value);
+   });
 
-   })
+   //API URL
+   const API_URL = "https://gutendex.com/books";
 }
