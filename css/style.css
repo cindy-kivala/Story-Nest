@@ -34,7 +34,8 @@ body{
     flex: 2;
     margin-left: 10%;
     display: flex;
-    padding: 0.5rem;
-    justify-content:space-around;
+    padding: 1.5rem;
+    justify-content:space-between;
     margin: 4%;
+    flex-wrap: wrap;
 }
