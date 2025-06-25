@@ -15,4 +15,10 @@
 //     console.log(input);
 //   });
 // });
-document.addEventListener("DOMContentLoaded", main);
+document.addEventListener("DOMContentLoaded", main => {
+    //function main()
+    function main() {
+        //load books on page load
+        fetchBooks();
+    }
+  
