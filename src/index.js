@@ -33,6 +33,16 @@ function main() {
             displayBooks(data);
         })
         .catch((error) => console.error("Error fetching books:", error));
-      
+   }
+   //display books function
+   function displayBooks(books) {
+       const bookDisplay = document.querySelector(".book-display");
+       bookDisplay.innerHTML = ""; // Clear previous results
+
+       //no books found
+       if (books.length === 0) {
+           bookDisplay.innerHTML = "<p>Sorry, no books found. Please try a different search term.</p>";
+           return;
+       }
    }
 }
