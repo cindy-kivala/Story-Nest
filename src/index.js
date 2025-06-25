@@ -44,5 +44,33 @@ function main() {
            bookDisplay.innerHTML = "<p>Sorry, no books found. Please try a different search term.</p>";
            return;
        }
+       //display each book
+       books.forEach((book) => {
+          const bookDiv = document.createElement("div");
+          bookDiv.className = "book-item";
+        //get book details
+          let title = book.title || "No title available";
+
+          //get book author on basis of first match to avoid confusion and ensure clarity
+          let author = "Unknown";
+          if (book.author && book.authors.length > 0) {
+            author = book.authors[0].name;
+          }
+         console.log("author:", author);
+
+         //subject or genre
+          let subject = "General";
+          if (book.subjects && book.subjects.length > 0) {
+            subject = book.subjects[0];
+          }
+          console.log("subject:", subject);
+
+          //get book cover image
+          let img = "";
+          if (book.formats && book.formats["image/jpeg"]) {
+            img = book.formats["image/jpeg"];
+          }
+          console.log("img:", img);
+       });
    }
 }
