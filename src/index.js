@@ -24,4 +24,15 @@ function main() {
 
    //API URL
    const API_URL = "https://gutendex.com/books";
+
+   //fetch books function- in response to user input
+   function fetchBooks(searchInput) {
+      fetch(`http://localhost:3000/books?q=${searchInput}`)//q=query
+        .then((response) => response.json())
+        .then((data) => {
+            displayBooks(data);
+        })
+        .catch((error) => console.error("Error fetching books:", error));
+      
+   }
 }
