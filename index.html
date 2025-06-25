@@ -7,16 +7,32 @@
     <link rel="stylesheet" href="./css/style.css">
     </head>
     <body>
-      <div class="shelf-container">
+      <div id="shelf-container">
         <h1>Story Nest</h1>
         <p>Welcome to Story Nest, your personal story collection!</p>
         <section class="Shelf-Search">
-        <input type="text" placeholder="Search for a story..." />
-        <button>Book Search</button><br>
-        <input type="text" placeholder="Filter by genre..." />
+        <input type="text" placeholder="Story/Author/Genre" /><br>
+        <button>Search</button><br>
+        <!-- <input type="text" placeholder="Filter by genre..." />
         <button> Author Filter</button><br>
         <input type="text" placeholder="Filter by author..." />
-        <button>Author Search</button>
+        <button>Author Search</button> -->
+        </section>
+        <!---Book display section--->
+        <section class="book-display">
+          <h2>Your Books</h2>
+          <div class="book-item">
+            <h3>Book Title 1</h3>
+            <img src="https://sterling-us.imgix.net/covers/9781435173064.jpg?auto=format&h=648" alt="Book Cover">
+            <p>Author: Author 1</p>
+            <p>Genre: Genre 1</p>
+          </div>
+          <div class="book-item">
+            <h3>Book Title 2</h3>
+            <img src="https://t1.bookpage.com/wp-content/uploads/2022/01/27115410/northangerabbey.jpg" alt="Book Cover">
+            <p>Author: Author 2</p>
+            <p>Genre: Genre 2</p>
+          </div>
         </section>
       </div>
 
