@@ -52,6 +52,13 @@ body{
     justify-content: center;
     margin-top: 2%;
 }
+#search {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 .Shelf-class {
     flex: 1;
     background-color: whitesmoke;
@@ -83,11 +90,28 @@ body{
     background-color: white;
     border-radius: 10px;
 }
-.favorites,
-#toogle-favorites {
-    display:flex;
-    margin:5%;
-    justify-content:center;
-    border-radius: 10%;
+#toggle-favorites {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-top: 3%;
+    border: none;
+}
+.fav-btn {
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+}
+.note-section {
+    margin-top: 1rem;
+}
+.note-section button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
 }

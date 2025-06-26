@@ -5,6 +5,17 @@ document.addEventListener("DOMContentLoaded", main);
 let allBooks = []; //hold the full list of books
 let showingFavorites = false; //toglle state trial
 
+function getNote(bookId) {
+    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
+    return notes[bookId] || "";
+}
+
+function saveNote(bookId, content) {
+    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
+    notes[bookId] = content;
+    localStorage.setItem("bookNotes", JSON.stringify(notes));
+}
+
 function main() {
     const form = document.getElementById("searcher");
     const input = document.getElementById("search-input");
@@ -151,6 +162,11 @@ function main() {
                 <button class="fav-btn" data-id="${book.id}">
                     ${isFavorite ? "★ Favorited" : "☆ Favorite"}
                 </button>
+
+                <div class="note-section">
+                   <textarea placeholder="Your notes here..." rows="3" data-id="${book.id}">${getNote(book.id)}</textarea>
+                   <button class="save-note" data-id="${book.id}">Save Note</button>
+                </div>
             `;
 
             //favorite button listener
@@ -166,6 +182,16 @@ function main() {
                 displayBooks(books); // re-render to reflect change
             });
 
+            //notes logic- //TO VIEW NOTES ON CONSOLE TYPE => JSON.parse(localStorage.getItem("bookNotes"))
+            const noteTextarea = bookDiv.querySelector("textarea");
+            const saveNoteBtn = bookDiv.querySelector(".save-note");
+
+            saveNoteBtn.addEventListener("click", () => {
+                const noteContent = noteTextarea.value;
+                saveNote(book.id, noteContent);
+                alert("Your Note is saved!");
+            });
+            console.log("Note saved succesfully");
             //append book
             bookDisplay.appendChild(bookDiv);
         });
