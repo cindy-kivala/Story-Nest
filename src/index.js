@@ -46,7 +46,8 @@ function main() {
     //Filter books when search
     function filterBooks(searchTerm) {
         const term = searchTerm.toLowerCase().replace(/[^\w\s]/gi, ""); // remove symbols
-
+       //case insensitivity
+        const normalize = string => string.toLowerCase().replace(/[^\w\s]/gi, "");//normalize book fields
         const filteredBooks = allBooks.filter(book => {
             const titleMatch = book.title && book.title.toLowerCase().includes(term);
 
@@ -161,3 +162,7 @@ function main() {
         console.log("Favorites saved successfully");
     }
 }
+//features to add
+//1. hoovr for summary box, find a way to have it only appear upon hoover
+//2. favorites shelf
+//3. popularity ranking
