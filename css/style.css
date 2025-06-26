@@ -32,7 +32,7 @@ body{
     opacity:0;
     transition: opacity 0.3s ease;
 }
-.tooltop:hover .tooltip-text {
+.tooltip:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }/*still not producing summary when i hooover the cursor over the  book vover*/

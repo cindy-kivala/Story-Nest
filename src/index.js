@@ -172,6 +172,13 @@ function main() {
 
         console.log("Books displayed successfully.");
         console.log("Favorites saved successfully");
+    }
+}
+//features to add
+//1. hoovr for summary box, find a way to have it only appear upon hoover
+//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES
+//3. popularity ranking
+
 
         //Favorites section
         // let showingFavorites = false;
@@ -209,10 +216,3 @@ function main() {
         //     document.getElementById("toggle-favorites").textContent = "Show Your Favorites";
         //     displayBooks(allBooks);
       // });//toggle button needs correction
-
-    }
-}
-//features to add
-//1. hoovr for summary box, find a way to have it only appear upon hoover
-//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES
-//3. popularity ranking
