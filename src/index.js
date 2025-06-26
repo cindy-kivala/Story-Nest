@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", main);
 
 //function main
 let allBooks = []; //hold the full list of books
+let showingFavorites = false; //toglle state trial
 
 function main() {
     const form = document.getElementById("searcher");
@@ -27,6 +28,17 @@ function main() {
     //listener for input changes
     input.addEventListener("input", (event) => {
         console.log("Typing:", event.target.value);
+    });
+
+     // favorites toggle
+    const toggleBtn = document.getElementById("toggle-favorites");
+    toggleBtn.addEventListener("click", () => {
+        showingFavorites = !showingFavorites;
+        toggleBtn.textContent = showingFavorites ? "Show All Books" : "Show Your Favorites";
+
+        const favIDs = getFavorites();
+        const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
+        displayBooks(showingFavorites ? favoriteBooks : allBooks);
     });
 
     //Fetch all books and store them in 'allBooks"
@@ -79,7 +91,7 @@ function main() {
 
     //Display books function
     function displayBooks(books) {
-        const bookDisplay = document.querySelector(".book-display");
+        const bookDisplay = document.querySelector("#book-list");
         bookDisplay.innerHTML = ""; // Clear previous results
 
         //no books found
@@ -162,24 +174,41 @@ function main() {
         console.log("Favorites saved successfully");
 
         //Favorites section
-        let showingFavorites = false;
-        document.getElementById("toggle-favorites").addEventListener("click", () => {
-          showingFavorites = !showingFavorites;
-          const btn = document.getElementById("toggle-favorites");
-          btn.textContent = showingFavorites ? "Show All Books" : "Show Favorites";
-          console.log("i want to view my favorites")
+        // let showingFavorites = false;
 
-          const favIDs = getFavorites();
-          const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
-          displayBooks(showingFavorites ? favoriteBooks : allBooks);
-        });
+        // const toggleBtn = document.getElementById("toggle-favorites");
 
-        //show all books button argument(confirm which of the two buttons are afftected)
-        document.getElementById("show-all-books").addEventListener("click", () => {
-            showingFavorites = false;;
-            document.getElementById("toggle-favorites").textContent = "Show Your Favorites";
-            displayBooks(allBooks);
-        });//toggle button needs correction
+        // toggleBtn.addEventListener("click", () => {
+        //     showingFavorites = !showingFavorites;
+
+        //     if (showingFavorites) {
+        //         toggleBtn.textContent = "Show All Books";
+        //         const favIDs = getFavorites();
+        //         const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
+        //         displayBooks(favoriteBooks); 
+        //     } else {
+        //         toggleBtn.textContent = "Show Your Favorites";
+        //         displayBooks(allBooks); //reset to all books
+        //     }
+        // })
+
+        // document.getElementById("toggle-favorites").addEventListener("click", () => {
+        //   showingFavorites = !showingFavorites;
+        //   const btn = document.getElementById("toggle-favorites");
+        //   btn.textContent = showingFavorites ? "Show All Books" : "Show Favorites";
+        //   console.log("i want to view my favorites")
+
+        //   const favIDs = getFavorites();
+        //   const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
+        //   displayBooks(showingFavorites ? favoriteBooks : allBooks);
+        // });
+
+       // show all books button argument(confirm which of the two buttons are afftected)
+        // document.getElementById("show-all-books").addEventListener("click", () => {
+        //     showingFavorites = false;;
+        //     document.getElementById("toggle-favorites").textContent = "Show Your Favorites";
+        //     displayBooks(allBooks);
+      // });//toggle button needs correction
 
     }
 }

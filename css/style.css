@@ -45,7 +45,7 @@ body{
     flex-wrap: wrap;
     font-size: 1.2rem;
     margin:4.5%;
-    border-radius: 3%;
+    border-radius: 0.2;
 }
 #searcher {
     display: flex;
@@ -54,7 +54,7 @@ body{
 }
 .Shelf-class {
     flex: 1;
-    background-color: aliceblue;
+    background-color: whitesmoke;
     padding: 1rem;
     border-radius: 20px;
     margin-top: 5%;
@@ -65,12 +65,22 @@ body{
     display: flex;
     padding: 1.5rem;
     justify-content:space-between;
-    margin: 4%;
+    margin: 5%;
     flex-wrap: wrap;
+}
+.book-item {
+    flex: 1 1 22%;
+    box-sizing: border-box;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 10px;
 }
 .favorites,
 #toogle-favorites {
     display:flex;
     margin:5%;
-    justify-content: center;
+    justify-content:center;
+    border-radius: 10%;
+    cursor: pointer;
 }
