@@ -52,6 +52,75 @@
     },
     {
       "id": "6",
+      "title": "A Tale of Two Cities",
+      "authors": [{"name": "Charles Dickens"}],
+      "subjects": ["Historical fiction","French Revolution"],
+      "formats": {
+        "image/jpeg": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg"
+      }
+    },
+     {
+    "id": "7",
+    "title": "Dracula",
+    "authors": [{ "name": "Bram Stoker" }],
+    "subjects": ["Horror", "Gothic fiction", "Vampires"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/345/pg345.cover.medium.jpg"
+    },
+    "summary": "A chilling tale of Count Dracula's invasion of England and the group of people determined to stop him."
+  },
+  {
+    "id": "8",
+    "title": "The Picture of Dorian Gray",
+    "authors": [{ "name": "Oscar Wilde" }],
+    "subjects": ["Philosophical fiction", "Gothic fiction"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/174/pg174.cover.medium.jpg"
+    },
+    "summary": "A man remains forever young while his portrait ages, reflecting his moral corruption."
+  },
+  {
+    "id": "9",
+    "title": "Jane Eyre",
+    "authors": [{ "name": "Charlotte Brontë" }],
+    "subjects": ["Romance", "Gothic fiction", "Coming-of-age"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/1260/pg1260.cover.medium.jpg"
+    },
+    "summary": "An orphaned governess overcomes hardship and heartbreak to find independence and love."
+  },
+  {
+    "id": "10",
+    "title": "The Time Machine",
+    "authors": [{ "name": "H. G. Wells" }],
+    "subjects": ["Science fiction", "Time travel"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/35/pg35.cover.medium.jpg"
+    },
+    "summary": "A scientist ventures into the distant future where he encounters the strange evolution of humanity."
+  },
+  {
+    "id": "11",
+    "title": "A Tale of Two Cities",
+    "authors": [{ "name": "Charles Dickens" }],
+    "subjects": ["Historical fiction", "French Revolution"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/98/pg98.cover.medium.jpg"
+    },
+    "summary": "A gripping story of sacrifice and redemption set during the French Revolution."
+  },
+  {
+    "id": "12",
+    "title": "The Wonderful Wizard of Oz",
+    "authors": [{ "name": "L. Frank Baum" }],
+    "subjects": ["Fantasy fiction", "Children's stories", "Adventure"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/55/pg55.cover.medium.jpg"
+    },
+    "summary": "Dorothy and her friends journey through a magical land in search of wisdom, courage, and home."
+  },
+    {
+      "id": "13",
       "title": "Alice's Adventures in Wonderland",
       "authors": [{ "name": "Lewis Carroll" }],
       "subjects": ["Fantasy fiction", "Children's stories"],
@@ -59,7 +128,117 @@
         "image/jpg": "https://www.gutenberg.org/cache/epub/11/pg11.cover.medium.jpg"
       },
       "summary": "Alice tumbles into a whimsical world of curious creatures and surreal adventures."
-    }
+    },
+  {
+    "id": "14",
+    "title": "Flatland: A Romance of Many Dimensions",
+    "authors": [{ "name": "Edwin A. Abbott" }],
+    "subjects": ["Science fiction", "Geometry", "Satire"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/201/pg201.cover.medium.jpg"
+    },
+    "summary": "A satirical science fiction novella about a two-dimensional world, challenging Victorian thinking and dimensionality."
+  },
+  {
+    "id": "15",
+    "title": "The Tale of Peter Rabbit",
+    "authors": [{ "name": "Beatrix Potter" }],
+    "subjects": ["Children's stories", "Animals", "Mischief"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/14838/pg14838.cover.medium.jpg"
+    },
+    "summary": "A mischievous young rabbit sneaks into Mr. McGregor’s garden and gets into trouble in this classic tale."
+  },
+  {
+    "id": "16",
+    "title": "The War of the Worlds",
+    "authors": [{ "name": "H. G. Wells" }],
+    "subjects": ["Science fiction", "Alien invasion"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/36/pg36.cover.medium.jpg"
+    },
+    "summary": "A pioneering alien invasion story describing the catastrophic conflict between humans and Martians."
+  },
+  {
+    "id": "17",
+    "title": "Heidi",
+    "authors": [{ "name": "Johanna Spyri" }],
+    "subjects": ["Children's literature", "Friendship", "Nature"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/1448/pg1448.cover.medium.jpg"
+    },
+    "summary": "The story of a young girl who brings joy and transformation to those around her in the Swiss Alps."
+  },
+  {
+    "id": "18",
+    "title": "The Call of the Wild",
+    "authors": [{ "name": "Jack London" }],
+    "subjects": ["Adventure", "Animals", "Survival"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/215/pg215.cover.medium.jpg"
+    },
+    "summary": "Buck, a domesticated dog, is thrust into the wild Yukon where he must rediscover his primal instincts to survive."
+  },
+   {
+    "id": "19",
+    "title": "The Prince",
+    "authors": [{ "name": "Niccolò Machiavelli" }],
+    "subjects": ["Political science", "History", "Philosophy"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/1232/pg1232.cover.medium.jpg"
+    },
+    "summary": "A political treatise offering advice to new princes and rulers on how to maintain power and control."
+  },
+  {
+    "id": "20",
+    "title": "Hamlet",
+    "authors": [{ "name": "William Shakespeare" }],
+    "subjects": ["Drama", "Tragedy", "Revenge"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/1524/pg1524.cover.medium.jpg"
+    },
+    "summary": "The troubled Prince of Denmark seeks revenge for his father's murder in this Shakespearean tragedy."
+  },
+  {
+    "id": "21",
+    "title": "Leaves of Grass",
+    "authors": [{ "name": "Walt Whitman" }],
+    "subjects": ["Poetry", "Nature", "Humanism"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/1322/pg1322.cover.medium.jpg"
+    },
+    "summary": "A bold collection of poetry celebrating the human spirit, nature, and democracy."
+  },
+  {
+    "id": "22",
+    "title": "Oedipus the King",
+    "authors": [{ "name": "Sophocles" }],
+    "subjects": ["Greek tragedy", "Fate", "Mythology"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/31/pg31.cover.medium.jpg"
+    },
+    "summary": "The classic Greek play where Oedipus unwittingly fulfills a tragic prophecy by killing his father and marrying his mother."
+  },
+  {
+    "id": "23",
+    "title": "Paradise Lost",
+    "authors": [{ "name": "John Milton" }],
+    "subjects": ["Epic poetry", "Religion", "Rebellion"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/20/pg20.cover.medium.jpg"
+    },
+    "summary": "An epic poem about Satan’s rebellion and humanity’s fall from grace after the temptation of Adam and Eve."
+  },
+  {
+    "id": "24",
+    "title": "The History of the Peloponnesian War",
+    "authors": [{ "name": "Thucydides" }],
+    "subjects": ["History", "Greece", "War"],
+    "formats": {
+      "image/jpg": "https://www.gutenberg.org/cache/epub/7142/pg7142.cover.medium.jpg"
+    },
+    "summary": "A detailed contemporary account of the conflict between Athens and Sparta during the Peloponnesian War."
+  }
   ]
 }
 
