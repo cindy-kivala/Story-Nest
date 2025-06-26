@@ -174,6 +174,13 @@ function main() {
           displayBooks(showingFavorites ? favoriteBooks : allBooks);
         });
 
+        //show all books button argument(confirm which of the two buttons are afftected)
+        document.getElementById("show-all-books").addEventListener("click", () => {
+            showingFavorites = false;;
+            document.getElementById("toggle-favorites").textContent = "Show Your Favorites";
+            displayBooks(allBooks);
+        });//toggle button needs correction
+
     }
 }
 //features to add
