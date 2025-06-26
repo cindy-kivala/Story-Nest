@@ -160,9 +160,23 @@ function main() {
 
         console.log("Books displayed successfully.");
         console.log("Favorites saved successfully");
+
+        //Favorites section
+        let showingFavorites = false;
+        document.getElementById("toggle-favorites").addEventListener("click", () => {
+          showingFavorites = !showingFavorites;
+          const btn = document.getElementById("toggle-favorites");
+          btn.textContent = showingFavorites ? "Show All Books" : "Show Favorites";
+          console.log("i want to view my favorites")
+
+          const favIDs = getFavorites();
+          const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
+          displayBooks(showingFavorites ? favoriteBooks : allBooks);
+        });
+
     }
 }
 //features to add
 //1. hoovr for summary box, find a way to have it only appear upon hoover
-//2. favorites shelf
+//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES
 //3. popularity ranking

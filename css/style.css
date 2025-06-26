@@ -7,7 +7,7 @@ body{
     color: white;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
     font-size: 4rem;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 /*Researched to implement hoover function*/
 /*container for thr tooltip*/
@@ -44,6 +44,8 @@ body{
     justify-content: space-between;
     flex-wrap: wrap;
     font-size: 1.2rem;
+    margin:4.5%;
+    border-radius: 3%;
 }
 #searcher {
     display: flex;
@@ -65,4 +67,10 @@ body{
     justify-content:space-between;
     margin: 4%;
     flex-wrap: wrap;
+}
+.favorites,
+#toogle-favorites {
+    display:flex;
+    margin:5%;
+    justify-content: center;
 }
