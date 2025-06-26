@@ -175,44 +175,6 @@ function main() {
     }
 }
 //features to add
-//1. hoovr for summary box, find a way to have it only appear upon hoover
-//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES
+//1. hoovr for summary box, find a way to have it only appear upon hoover(DONE-typo ws causing bug)
+//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES(done via toggle button)
 //3. popularity ranking
-
-
-        //Favorites section
-        // let showingFavorites = false;
-
-        // const toggleBtn = document.getElementById("toggle-favorites");
-
-        // toggleBtn.addEventListener("click", () => {
-        //     showingFavorites = !showingFavorites;
-
-        //     if (showingFavorites) {
-        //         toggleBtn.textContent = "Show All Books";
-        //         const favIDs = getFavorites();
-        //         const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
-        //         displayBooks(favoriteBooks); 
-        //     } else {
-        //         toggleBtn.textContent = "Show Your Favorites";
-        //         displayBooks(allBooks); //reset to all books
-        //     }
-        // })
-
-        // document.getElementById("toggle-favorites").addEventListener("click", () => {
-        //   showingFavorites = !showingFavorites;
-        //   const btn = document.getElementById("toggle-favorites");
-        //   btn.textContent = showingFavorites ? "Show All Books" : "Show Favorites";
-        //   console.log("i want to view my favorites")
-
-        //   const favIDs = getFavorites();
-        //   const favoriteBooks = allBooks.filter(book => favIDs.includes(book.id));
-        //   displayBooks(showingFavorites ? favoriteBooks : allBooks);
-        // });
-
-       // show all books button argument(confirm which of the two buttons are afftected)
-        // document.getElementById("show-all-books").addEventListener("click", () => {
-        //     showingFavorites = false;;
-        //     document.getElementById("toggle-favorites").textContent = "Show Your Favorites";
-        //     displayBooks(allBooks);
-      // });//toggle button needs correction
