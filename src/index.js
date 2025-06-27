@@ -5,7 +5,18 @@ document.addEventListener("DOMContentLoaded", main);
 let allBooks = []; //hold the full list of books
 let showingFavorites = false; //toglle state trial
 let bookNotes = {}; //store notes in memory
+let likedBooks = []; //will store liked books
+let showingLiked = false;
 
+//Likd books dec
+function getLikedBooks() {
+    return JSON.parse(localStorage.getItem("likedBooks")) || [];
+}
+function saveLikedBooks(likedArray) {
+    localStorage.setItem("likedBooks", JSON.stringify(likedArray));
+    alert("Wow, Great Taste, scholar!");
+    console.log("Liked Book Saved successfully");
+}
 function main() {
     const form = document.getElementById("searcher");
     const input = document.getElementById("search-input");
@@ -42,6 +53,23 @@ function main() {
         displayBooks(showingFavorites ? favoriteBooks : allBooks);
     });
 
+    //toggle liked books
+    const likedToggleBtn = document.createElement("button");
+    likedToggleBtn.textContent = "Show Your Liked Books";
+    likedToggleBtn.id = "toggle-liked";
+    document.querySelector(".favorites").appendChild(likedToggleBtn);
+    console.log("Liked books button added successfully");
+    
+    //liker event listener
+    likedToggleBtn.addEventListener("click", () => {
+        showingLiked = !showingLiked;
+        likedToggleBtn.textContent = showingLiked ?"Show All Books" : "Show Liked Books";
+        console.log(`Now showingLiked = ${showingLiked}`);
+
+        const likedIDs = getLikedBooks();
+        const likedBooksOnly = allBooks.filter(book => likedIDs.includes(book.id));
+        displayBooks(showingLiked ? likedBooksOnly : allBooks);
+    });
     //Fetch all books and store them in 'allBooks"
     fetchBooks();
 
@@ -87,6 +115,7 @@ function main() {
     //Saving favorites - Storing favorite IDs in local storage
     function saveFavorites(favorites) {
         localStorage.setItem("favorites", JSON.stringify(favorites));
+        alert("A Great Favorite Indeed!");
     }
     console.log("Saving favorites");
 
@@ -110,6 +139,10 @@ function main() {
             bookDiv.className = "book-item";
 
             const isFavorite = favorites.includes(book.id);
+
+            //current liked status
+            const likedBooks = getLikedBooks();
+            const isLiked = likedBooks.includes(book.id);
 
             //get book details
             const title = book.title || "No title available";
@@ -153,6 +186,10 @@ function main() {
                     ${isFavorite ? "★ Favorited" : "☆ Favorite"}
                 </button>
 
+                <button class="like-btn" data-id="${book.id}">
+                    ${likedBooks.includes(book.id) ? "❤️ Liked" : "🤍 Like"}
+                </button>
+
                 <div class="note-section">
                   <textarea placeholder="Your notes here..." rows="3" data-id="${book.id}">
                      ${bookNotes[book.id] || ""}
@@ -160,7 +197,7 @@ function main() {
                    <button class="save-note" data-id="${book.id}">Save Note</button>
                 </div>
             `;
-
+             
             //favorite button listener
             const favBtn = bookDiv.querySelector(".fav-btn");
             favBtn.addEventListener("click", () => {
@@ -173,6 +210,21 @@ function main() {
                 saveFavorites(updated);
                 displayBooks(books); // re-render to reflect change
             });
+            
+            //like button listener
+            const likeBtn = bookDiv.querySelector(".like-btn");
+            likeBtn.addEventListener("click", () => {
+                let updatedLikes = getLikedBooks();
+
+                if (updatedLikes.includes(book.id)) {
+                    updatedLikes = updatedLikes.filter(id => id !== book.id);
+                } else {
+                    updatedLikes.push(book.id);
+                }
+                saveLikedBooks(updatedLikes);
+                displayBooks(books); //refresh
+            });
+            console.log("Great taste on the liked books, scholar!")
 
             //notes logic- //TO VIEW NOTES ON CONSOLE TYPE => JSON.parse(localStorage.getItem("bookNotes"))
             const noteTextarea = bookDiv.querySelector("textarea");

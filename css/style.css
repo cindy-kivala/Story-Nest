@@ -98,12 +98,28 @@ body{
     margin-top: 3%;
     border: none;
 }
+#toggle-liked {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-top: 3%;
+}
 .fav-btn {
     border-radius: 5px;
     border: none;
     cursor: pointer;
     background-color: #4CAF50;
     color: white;
+}
+.like-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 .note-section {
     margin-top: 1rem;
