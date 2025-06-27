@@ -12,6 +12,7 @@ This Book Explorer app lets users:
 3. Favorite and like individual books
 4. View only favorites or liked books
 5. Add and save personal notes (non-persistent memory only)
+6. Hoover cursor over book cover image to see brief summary of the book
 
 ---
 
@@ -38,6 +39,9 @@ This Book Explorer app lets users:
 - Stored in memory only (not saved on page reload)
 - Immediate feedback and alert confirmation
 
+### Hoover (Summary Feature)
+- When you hoover the cursor over a cover image, a short summary synopsis of the book is displayed.
+- If no synopsis is available; the message "No summary available appears"
 ---
 
 ##  Technologies Used
@@ -66,7 +70,7 @@ project-folder/
 
 ### 1. Clone the repository
 
-git clone https://github.com/cindy-kivala/story-nest.git
+git clone git@github.com:cindy-kivala/Story-Nest.git
 cd story-nest
 
 2. Install and Run json-server
@@ -105,6 +109,8 @@ You can use Live Server (VS Code extension) or just double-click the file.
 1. Convert note-saving to persistent storage
 
 2. Add  further sorting ( Z-A,  popularity)
+
+3. Light/Dark UI toggle
 
 # Author
 Cindy Kivala | Programmer | Bibliophile
