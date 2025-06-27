@@ -4,17 +4,7 @@ document.addEventListener("DOMContentLoaded", main);
 //function main
 let allBooks = []; //hold the full list of books
 let showingFavorites = false; //toglle state trial
-
-function getNote(bookId) {
-    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
-    return notes[bookId] || "";
-}
-
-function saveNote(bookId, content) {
-    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
-    notes[bookId] = content;
-    localStorage.setItem("bookNotes", JSON.stringify(notes));
-}
+let bookNotes = {}; //store notes in memory
 
 function main() {
     const form = document.getElementById("searcher");
@@ -164,7 +154,9 @@ function main() {
                 </button>
 
                 <div class="note-section">
-                   <textarea placeholder="Your notes here..." rows="3" data-id="${book.id}">${getNote(book.id)}</textarea>
+                  <textarea placeholder="Your notes here..." rows="3" data-id="${book.id}">
+                     ${bookNotes[book.id] || ""}
+                  </textarea>
                    <button class="save-note" data-id="${book.id}">Save Note</button>
                 </div>
             `;
@@ -188,13 +180,25 @@ function main() {
 
             saveNoteBtn.addEventListener("click", () => {
                 const noteContent = noteTextarea.value;
-                saveNote(book.id, noteContent);
-                alert("Your Note is saved!");
+                bookNotes[book.id] = noteContent;//memory store
+                alert("Your Note is saved successfully!");
             });
             console.log("Note saved succesfully");
             //append book
             bookDisplay.appendChild(bookDiv);
         });
+        
+        //memory-only save button argument
+        //   function getNote(bookId) {
+        //     const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
+        //     return notes[bookId] || "";
+        //   }
+
+        //  function saveNote(bookId, content) {
+        //    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
+        //    notes[bookId] = content;
+        //    localStorage.setItem("bookNotes", JSON.stringify(notes));
+        //  }
 
         console.log("Books displayed successfully.");
         console.log("Favorites saved successfully");
@@ -204,3 +208,4 @@ function main() {
 //1. hoovr for summary box, find a way to have it only appear upon hoover(DONE-typo ws causing bug)
 //2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES(done via toggle button)
 //3. popularity ranking
+//MAKE NOTES FEATURE NON-PERSISTENT
