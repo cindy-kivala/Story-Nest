@@ -1,4 +1,3 @@
-//FIND A SOLUTION TO ENSURE THE SEARCH ISNT REQUIRED IN STRICT TERMS-CASE INSENSITIVE and SYMBOLS
 document.addEventListener("DOMContentLoaded", main);
 
 //function main
@@ -35,6 +34,20 @@ function main() {
             // call filterBooks function if input is not empty
             filterBooks(searchTerm); //changed to filter to stop all data from loading after search
         }
+    });
+    
+    //sort event listener-A-Z 
+    document.getElementById("sort-options").addEventListener("change", (e) => {
+      const option = e.target.value;
+      let booksToSort = showingFavorites
+      ? allBooks.filter(book => getFavorites().includes(book.id))
+      : [...allBooks];
+
+      if (option === "alpha") {
+        booksToSort.sort((a, b) => a.title.localeCompare(b.title));
+      }
+      displayBooks(booksToSort);
+      console.log("Sorting your books")
     });
 
     //listener for input changes
@@ -240,24 +253,7 @@ function main() {
             bookDisplay.appendChild(bookDiv);
         });
         
-        //memory-only save button argument
-        //   function getNote(bookId) {
-        //     const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
-        //     return notes[bookId] || "";
-        //   }
-
-        //  function saveNote(bookId, content) {
-        //    const notes = JSON.parse(localStorage.getItem("bookNotes")) || {};
-        //    notes[bookId] = content;
-        //    localStorage.setItem("bookNotes", JSON.stringify(notes));
-        //  }
-
         console.log("Books displayed successfully.");
         console.log("Favorites saved successfully");
     }
 }
-//features to add
-//1. hoovr for summary box, find a way to have it only appear upon hoover(DONE-typo ws causing bug)
-//2. favorites shelf (successful) BUT NOW I NEED A FEATURE WHERE WHEN I PRESS SHOW ALL  BOOKS I CAN GO BACK TO ALL BOOKS FROM FAVORITES(done via toggle button)
-//3. popularity ranking
-//MAKE NOTES FEATURE NON-PERSISTENT
